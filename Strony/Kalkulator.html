@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>Kalkulator</title>
+<meta charset="utf-8" />
+<style type="text/css">
+#calculator {
+    background: #eaeaea;
+    margin: 0 auto;
+    padding: 35px 25px 35px 25px;
+    width: 200px;
+    text-align: center;
+}
+#calculator button {
+    padding: 10px;
+    width: 40px;
+    background-color: lightblue;
+}
+#calculator input[type="text"] {
+    padding: 10px;
+    width: 147px;
+    margin-bottom: 5px;
+    
+
+}
+.tytul
+{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: mediumslateblue;
+    width:500px;
+    height:100px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.przycisk{
+display: block;
+float: center;
+text-align: center;
+font-size: 1.2em;
+width: 200px;
+font-family: Arial, Helvetica, sans-serif;
+text-decoration: none;
+color: rgb(255, 255, 255);
+background-color: rgb(245, 200, 0);
+padding: 10px 15px;
+margin: 0px 1px 1px 0px;
+border: 1px solid rgb(0, 0, 0);
+border-radius: 3px;
+margin-left: auto;
+margin-right: auto;    
+}
+</style>
+<script>
+function Calculator(operator) 
+{
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;  
+ 
+    switch(operator) 
+    {
+        case '+':
+            var result = parseFloat(a) + parseFloat(b);         
+        break;
+        case '-':
+            var result = parseFloat(a) - parseFloat(b);         
+        break;  
+        case 'x':
+            var result = parseFloat(a) * parseFloat(b);         
+        break;  
+        case '/':
+            var result = parseFloat(a) / parseFloat(b);         
+        break;    
+    }
+ 
+    document.getElementById('result').value = '= ' + result;
+}
+</script>
+</head>
+<body>
+   <div class="tytul">
+    <h1><br>Kalkulator prosty</h1>
+   </div> 
+<form id="calculator">
+    <input type="text" id="a" placeholder="a" />
+    <input type="text" id="b" placeholder="b" />
+    <input type="text" id="result" placeholder="=" disabled="disabled" /> <br>
+    <button type="button" onclick="Calculator(this.innerHTML)">+</button> 
+    <button type="button" onclick="Calculator(this.innerHTML)">-</button>
+    <button type="button" onclick="Calculator(this.innerHTML)">x</button>   
+    <button type="button" onclick="Calculator(this.innerHTML)">/</button>
+</form>
+<div class="przycisk"><a href="../index.html">Wróć do strony głównej</a></div>
+</body>
+</html>

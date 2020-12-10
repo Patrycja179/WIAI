@@ -1,0 +1,112 @@
+<!DOCTYPE HTML> 
+<html lang='pl'> 
+  
+<head> 
+    <title> 
+        Odbijająca się piłka 
+    </title> 
+<style> 
+h1 { 
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: mediumslateblue;
+    width:500px;
+    height:100px;
+    margin-left: auto;
+    margin-right: auto;
+
+} 
+          
+canvas { 
+    background-color: #bcf7f2;
+    border: solid black 5px; 
+    width: 600px; 
+    height: 400px; 
+    margin-left: auto;
+    margin-right: auto;
+} 
+.przycisk{
+    display: block;
+    float: center;
+    text-align: center; 
+    font-size: 1.2em;
+    width: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(245, 200, 0);
+    padding: 10px 15px;
+    margin: 0px 1px 1px 0px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;    
+}
+</style> 
+  
+</head> 
+  
+<body> 
+    <center> 
+        <h1> <br> Animacja</h1> 
+        <h3>Odbijająca się piłka</h3> 
+        <canvas> 
+        </canvas> 
+        <script> 
+            var canvas = document.querySelector("canvas"); 
+  
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+  
+            var l = canvas.getContext('2d'); 
+  
+            // x, y koordynaty 
+  
+            // vx, vy speed
+  
+            var x = Math.floor(Math.random() * innerWidth); 
+            var y = Math.floor(Math.random() * innerHeight); 
+            var vx = Math.floor(Math.random() * 2); 
+            var vy = Math.floor(Math.random() * 4); 
+            var radius = 20; 
+  
+            move(); 
+            
+            // animacja
+            function move() { 
+                requestAnimationFrame(move); 
+  
+                // It clears the specified pixels within  
+                // the given rectangle 
+                l.clearRect(0, 0, innerWidth, innerHeight); 
+  
+                // Tworzenie piłki 
+                l.beginPath(); 
+                l.strokeStyle = "black"; 
+                l.arc(x, y, radius, 0, Math.PI * 2, false); 
+                l.stroke(); 
+  
+                // Conditions sso that the ball bounces  
+                // from the edges 
+                if (radius + x > innerWidth) 
+                    vx = 0 - vx; 
+  
+                if (x - radius < 0) 
+                    vx = 0 - vx; 
+  
+                if (y + radius > innerHeight) 
+                    vy = 0 - vy; 
+  
+                if (y - radius < 0) 
+                    vy = 0 - vy; 
+  
+                x = x + vx; 
+                y = y + vy; 
+  
+            } 
+        </script> 
+    </center> 
+    <div class="przycisk"><a href="../index.html">Wróć do strony głównej</a></div>
+</body> 
+
+</html> 

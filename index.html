@@ -1,0 +1,57 @@
+<!DOCTYPE HTML> 
+<html lang='pl'> 
+<head>
+	<meta charset='utf-8'>
+	<meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>
+	<title>Projekt Roczny</title>
+	<link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+
+<div class='container'>
+
+	<!-- header --> 
+	<header>
+		<img src="images/header.jpg" alt=""/>
+	</header>
+	
+	<!-- sidebar --> 
+	<aside>
+		<div class='menu-trigger'>Menu</div>
+		<nav>
+			<ul>
+				<li><a href="./index.html">Strona główna</a></li>
+				<li><a href="Strony/Klik.html">Kliker</a></li>
+				<li><a href="Strony/Kalkulator.html">Kalkulator</a></li>
+				<li><a href="Strony/animacja.html">Animacja</a></li>
+				<li><a href="Strony/gra.html">Gra</a></li>
+				
+			</ul>
+		</nav>
+	</aside>
+
+	<!-- main -->
+	<section id="main">
+		<h1>Ogólny opis</h1>
+		<p>Strona podzielona jest na różne podstrony z innymi metodami, jakimi mozna wykożystać java script. </p>
+	</section>
+	
+	<!-- footer -->
+	<footer>
+		<p>Wykonali Patrycja Kubica i Marcin Truss</p>
+	</footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$(".menu-trigger").click(function(){
+			$('nav').slideToggle();
+		});
+	});
+</script>
+
+
+</body>
+</html>
